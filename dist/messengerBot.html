@@ -1,0 +1,46 @@
+<script type="text/javascript">
+    RED.nodes.registerType('messengerBot',{
+        category: 'botmaster',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value:""},
+            verifyToken: {value: ""},
+            pageToken: {value: ""},
+            fbAppSecret: {value: ""},
+            webhookEndpoint: {value: ""}
+        },
+        inputs:1,
+        outputs: 1,
+        icon: "file.png",
+        label: function()   {
+            return this.name||"Messenger Bot";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="messengerBot">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-verifyToken"><i class="icon-tag"></i> Verify Token</label>
+        <input type="text" id="node-input-verifyToken" placeholder="Verify Token">
+    </div>
+    <div class="form-row">
+        <label for="node-input-pageToken"><i class="icon-tag"></i> Page Token</label>
+        <input type="text" id="node-input-pageToken" placeholder="Page Token">
+    </div>
+    <div class="form-row">
+        <label for="node-input-fbAppSecret"><i class="icon-tag"></i> App Secret</label>
+        <input type="text" id="node-input-fbAppSecret" placeholder="Facebook App Secret">
+    </div>
+    <div class="form-row">
+        <label for="node-input-webhookEndpoint"><i class="icon-tag"></i> Endpoint</label>
+        <input type="text" id="node-input-webhookEndpoint" placeholder="Webhook Endpoint">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="messengerBot">
+    <p>A simple node that converts the message payloads outto all lower-case characters</p>
+</script>

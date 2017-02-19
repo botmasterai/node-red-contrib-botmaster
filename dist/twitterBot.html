@@ -1,0 +1,46 @@
+<script type="text/javascript">
+    RED.nodes.registerType('twitterBot',{
+        category: 'botmaster',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value:""},
+            consumerKey: {value: ""},
+            consumerSecret: {value: ""},
+            accessToken: {value: ""},
+            accessTokenSecret: {value: ""}
+        },
+        inputs:1,
+        outputs: 1,
+        icon: "file.png",
+        label: function()   {
+            return this.name||"Twitter Bot";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="twitterBot">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-consumerKey"><i class="icon-tag"></i> Consumer Key</label>
+        <input type="text" id="node-input-consumerKey" placeholder="Consumer Key">
+    </div>
+    <div class="form-row">
+        <label for="node-input-consumerSecret"><i class="icon-tag"></i> Consumer Secret</label>
+        <input type="text" id="node-input-consumerSecret" placeholder="Consumer Secret">
+    </div>
+    <div class="form-row">
+        <label for="node-input-accessToken"><i class="icon-tag"></i> Access Token</label>
+        <input type="text" id="node-input-accessToken" placeholder="Access Token">
+    </div>
+    <div class="form-row">
+        <label for="node-input-accessTokenSecret"><i class="icon-tag"></i> Access Secret</label>
+        <input type="text" id="node-input-accessTokenSecret" placeholder="Access Token Secret">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="twitterBot">
+    <p>A simple node that converts the message payloads outto all lower-case characters</p>
+</script>

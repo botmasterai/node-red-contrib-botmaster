@@ -1,0 +1,41 @@
+<script type="text/javascript">
+    RED.nodes.registerType('slackBot',{
+        category: 'botmaster',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value:""},
+            clientId: {value:""},
+            clientSecret: {value:""},
+            webhookEndpoint: {value: ""}
+        },
+        inputs:1,
+        outputs: 1,
+        icon: "file.png",
+        label: function()   {
+            return this.name||"Slack Bot";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="slackBot">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-clientId"><i class="icon-tag"></i> Client ID</label>
+        <input type="text" id="node-input-clientId" placeholder="Client ID">
+    </div>
+    <div class="form-row">
+        <label for="node-input-clientSecret"><i class="icon-tag"></i> Client Secret</label>
+        <input type="text" id="node-input-clientSecret" placeholder="Client Secret">
+    </div>
+    <div class="form-row">
+        <label for="node-input-webhookEndpoint"><i class="icon-tag"></i> Endpoint</label>
+        <input type="text" id="node-input-webhookEndpoint" placeholder="Webhook Endpoint">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="slackBot">
+    <p>A simple node that converts the message payloads outto all lower-case characters</p>
+</script>
