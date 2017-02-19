@@ -1,25 +1,43 @@
 <script type="text/javascript">
-    RED.nodes.registerType('botmaster-out',{
+    RED.nodes.registerType('botmaster out',{
         category: 'botmaster',
         color: '#a6bbcf',
         defaults: {
-            name: {value:""}
+            name: {value:""},
+            function: {value:""}
         },
         inputs:1,
         icon: "file.png",
         label: function()   {
-            return this.name||"botmaster-out";
+            return this.name||"botmaster out";
         }
     });
 </script>
 
-<script type="text/x-red" data-template-name="botmaster-out">
+<script type="text/x-red" data-template-name="botmaster out">
     <div class="form-row">
         <label for="node-input-name"><i class="icon-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
     </div>
+    <div class="form-row">
+        <label for="node-input-function"><i class="icon-tag"></i> Function</label>
+        <select id="node-input-function" placeholder="Send message function">
+            <option selected="selected" value="sendMessage">sendMessage</option>
+            <option value="reply">reply</option>
+            <option value="sendMessageTo">sendMessageTo</option>
+            <option value="sendTextMessageTo">sendTextMessageTo</option>
+            <option value="sendAttachmentTo">sendAttachmentTo</option>
+            <option value="sendAttachmentFromURLTo">sendAttachmentFromURLTo</option>
+            <option value="sendIsTypingMessageTo">sendIsTypingMessageTo</option>
+            <option value="sendDefaultButtonMessageTo">sendDefaultButtonMessageTo</option>
+            <option value="sendCascadeTo">sendCascadeTo</option>
+            <option value="sendTextCascadeTo">sendTextCascadeTo</option>
+        </select>
+    </div>
 </script>
 
-<script type="text/x-red" data-help-name="botmaster-out">
-    <p>Send message</p>
+<script type="text/x-red" data-help-name="botmaster out">
+    <p>Send message using one of the botmaster send message functions.</p>
+    <p>Defaults to sendMessage but othe functions like reply are possible.</p>
+    <p>Read more about the available functions here: <a href="http://botmasterai.com/working-with-botmaster/botmaster-basics/">Botmaster basics</a></p>
 </script>

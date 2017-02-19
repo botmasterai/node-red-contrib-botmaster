@@ -7,7 +7,13 @@ module.exports = function(RED) {
 
         var botmaster = setupBotmaster(RED);
 
-        botmaster.on('update', node.send);
+        botmaster.on('update', function(bot, update) {
+            node.send({
+                bot: bot,
+                payload: update,
+                update: update
+            });
+        });
     }
-    RED.nodes.registerType('botmaster-in', BotmasterInNode);
+    RED.nodes.registerType('botmaster in', BotmasterInNode);
 };

@@ -353,7 +353,7 @@
     "botmaster-in": {
      "name": "botmaster-in",
      "types": [
-      "botmaster-in"
+      "botmaster in"
      ],
      "enabled": true,
      "local": false,
@@ -363,7 +363,7 @@
     "botmaster-out": {
      "name": "botmaster-out",
      "types": [
-      "botmaster-out"
+      "botmaster out"
      ],
      "enabled": true,
      "local": false,

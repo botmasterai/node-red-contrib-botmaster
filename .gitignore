@@ -1,2 +1,4 @@
 node_modules
 .flows.json.backup
+flows.json
+.config.json

@@ -21,6 +21,7 @@
   "keywords": [
     "nodered",
     "nodes",
+    "botmaster",
     "node-red",
     "botmaster"
   ],
@@ -28,8 +29,8 @@
   "license": "MIT",
   "node-red"     : {
     "nodes": {
-        "botmaster-in": "dist/botmaster-in.js",
-        "botmaster-out": "dist/botmaster-out.js",
+        "botmaster in": "dist/botmaster-in.js",
+        "botmaster out": "dist/botmaster-out.js",
         "messengerBot": "dist/messengerBot.js",
         "telegramBot": "dist/telegramBot.js",
         "slackBot": "dist/slackBot.js",
