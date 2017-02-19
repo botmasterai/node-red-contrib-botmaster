@@ -21,7 +21,12 @@ module.exports = function(RED) {
             messengerBot.sendMessage(msg);
         });
 
-        messengerBot.on('update', node.send);
+        messengerBot.on('update', function(update) {
+            node.send({
+                update: update,
+                payload: update
+            });
+        });
 
     }
     RED.nodes.registerType('messengerBot', MessengerBotNode);

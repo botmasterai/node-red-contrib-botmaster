@@ -14,7 +14,12 @@ module.exports = function(RED) {
             slackBot.sendMessage(msg);
         });
 
-        slackBot.on('update', node.send);
+        slackBot.on('update', function(update) {
+            node.send({
+                update: update,
+                payload: update
+            });
+        });
 
     }
     RED.nodes.registerType('slackBot', SlackBotNode);

@@ -14,7 +14,12 @@ module.exports = function(RED) {
             telegramBot.sendMessage(msg);
         });
 
-        telegramBot.on('update', node.send);
+        telegramBot.on('update', function(update) {
+            node.send({
+                update: update,
+                payload: update
+            });
+        });
 
     }
     RED.nodes.registerType('telegramBot', TelegramBotNode);

@@ -14,7 +14,12 @@ module.exports = function(RED) {
             twitterBot.sendMessage(msg);
         });
 
-        twitterBot.on('update', node.send);
+        twitterBot.on('update', function(update) {
+            node.send({
+                update: update,
+                payload: update
+            });
+        });
 
     }
     RED.nodes.registerType('twitterBot', TwitterBotNode);
