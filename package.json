@@ -4,13 +4,16 @@
   "description": "botmaster for node-red",
   "dependencies": {
     "botmaster": "^2.2.7",
-    "node-red": "^0.16.2"
+    "node-red": "^0.16.2",
+    "ramda": "^0.23.0"
   },
   "devDependencies": {
+    "localtunnel": "^1.8.2",
     "nodemon": "^1.11.0"
   },
   "scripts": {
     "watch": "nodemon",
+    "tunnel": "( while true; do lt -p 3000 -s noderedcontribbotmaster; done; )",
     "start": "node-red --settings ./settings.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

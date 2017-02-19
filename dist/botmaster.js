@@ -13,6 +13,10 @@ function setupBotmaster(RED) {
 
     botmaster = new Botmaster({app: RED.app});
 
+    botmaster.on('error', function(bot, error) {
+        console.error(error);
+    });
+
     return botmaster;
 }
 

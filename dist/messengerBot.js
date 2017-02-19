@@ -7,7 +7,14 @@ module.exports = function(RED) {
         var node = this;
 
         var botmaster = setupBotmaster(RED);
-        var messengerBot = new MessengerBot(config);
+        var messengerBot = new MessengerBot({
+            credentials: {
+                verifyToken: config.verifyToken,
+                pageToken: config.pageToken,
+                fbAppSecret: config.fbAppSecret
+            },
+            webhookEndpoint: config.webhookEndpoint
+        });
         botmaster.addBot(messengerBot);
 
         this.on('input', function(msg) {
