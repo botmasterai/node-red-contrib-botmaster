@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-botmaster",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "botmaster for node-red",
   "dependencies": {
     "botmaster": "^2.2.7",
@@ -27,14 +27,14 @@
   ],
   "author": "Jonathan R Wickens",
   "license": "MIT",
-  "node-red"     : {
+  "node-red": {
     "nodes": {
-        "botmaster in": "dist/botmaster-in.js",
-        "botmaster out": "dist/botmaster-out.js",
-        "messengerBot": "dist/messengerBot.js",
-        "telegramBot": "dist/telegramBot.js",
-        "slackBot": "dist/slackBot.js",
-        "twitterBot": "dist/twitterBot.js"
+      "botmaster in": "dist/botmaster-in.js",
+      "botmaster out": "dist/botmaster-out.js",
+      "messengerBot": "dist/messengerBot.js",
+      "telegramBot": "dist/telegramBot.js",
+      "slackBot": "dist/slackBot.js",
+      "twitterBot": "dist/twitterBot.js"
     }
   },
   "bugs": {
