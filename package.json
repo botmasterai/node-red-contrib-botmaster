@@ -4,6 +4,9 @@
   "description": "botmaster for node-red",
   "dependencies": {
     "botmaster": "^2.2.7",
+    "botmaster-fulfill": "^2.1.4",
+    "botmaster-fulfill-actions": "^0.2.2",
+    "botmaster-session-ware": "^0.1.0",
     "node-red": "^0.16.2",
     "ramda": "^0.23.0"
   },
@@ -13,7 +16,7 @@
   },
   "scripts": {
     "watch": "nodemon",
-    "tunnel": "( while true; do lt -p 3000 -s noderedcontribbotmaster; done; )",
+    "tunnel": "( while true; do lt -p 1880 -s noderedcontribbotmaster; done; )",
     "start": "node-red --settings ./settings.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -32,8 +35,10 @@
   "license": "MIT",
   "node-red": {
     "nodes": {
-      "botmaster in": "dist/botmaster-in.js",
-      "botmaster out": "dist/botmaster-out.js",
+      "action start": "dist/action-start.js",
+      "action end": "dist/action-end.js",
+      "bot update": "dist/bot-update.js",
+      "bot response": "dist/bot-response.js",
       "messengerBot": "dist/messengerBot.js",
       "telegramBot": "dist/telegramBot.js",
       "slackBot": "dist/slackBot.js",

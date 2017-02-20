@@ -1,5 +1,5 @@
 <script type="text/javascript">
-    RED.nodes.registerType('botmaster in',{
+    RED.nodes.registerType('bot update',{
         category: 'botmaster',
         color: '#a6bbcf',
         defaults: {
@@ -8,18 +8,23 @@
         outputs:1,
         icon: "file.png",
         label: function() {
-            return this.name||"botmaster in";
+            return this.name||"update";
         }
     });
 </script>
 
-<script type="text/x-red" data-template-name="botmaster in">
+<script type="text/x-red" data-template-name="bot update">
     <div class="form-row">
         <label for="node-input-name"><i class="icon-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
     </div>
 </script>
 
-<script type="text/x-red" data-help-name="botmaster in">
-    <p>Sends botmaster updates from all configured bots.</p>
+<script type="text/x-red" data-help-name="bot update">
+    <p>
+        Sends botmaster updates from all configured bots.
+    </p> <p>
+        <b>Note: </b>This node does not send any response to the sender.
+        This should be done with a subsequent bot response node.
+    </p>
 </script>

@@ -1,25 +1,16 @@
-var setupBotmaster = require('./botmaster');
+var setupBotmaster = require('./botmaster').setupBotmaster;
 var TwitterBot = require('botmaster').botTypes.TwitterBot;
 
 module.exports = function(RED) {
     function TwitterBotNode(config) {
         RED.nodes.createNode(this,config);
-        var node = this;
 
-        var botmaster = setupBotmaster(RED);
+        var setup = setupBotmaster(RED);
+        var botmaster = setup.botmaster;
         var twitterBot = new TwitterBot(config);
         botmaster.addBot(twitterBot);
 
-        this.on('input', function(msg) {
-            twitterBot.sendMessage(msg);
-        });
-
-        twitterBot.on('update', function(update) {
-            node.send({
-                update: update,
-                payload: update
-            });
-        });
+        setup.done(twitterBot);
 
     }
     RED.nodes.registerType('twitterBot', TwitterBotNode);

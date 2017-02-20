@@ -1,25 +1,16 @@
-var setupBotmaster = require('./botmaster');
+var setupBotmaster = require('./botmaster').setupBotmaster;
 var SlackBot = require('botmaster').botTypes.SlackBot;
 
 module.exports = function(RED) {
     function SlackBotNode(config) {
         RED.nodes.createNode(this,config);
-        var node = this;
 
-        var botmaster = setupBotmaster(RED);
         var slackBot = new SlackBot(config);
+        var setup = setupBotmaster(RED);
+        var botmaster = setup.botmaster;
         botmaster.addBot(slackBot);
-
-        this.on('input', function(msg) {
-            slackBot.sendMessage(msg);
-        });
-
-        slackBot.on('update', function(update) {
-            node.send({
-                update: update,
-                payload: update
-            });
-        });
+        
+        setup.done(slackBot);
 
     }
     RED.nodes.registerType('slackBot', SlackBotNode);

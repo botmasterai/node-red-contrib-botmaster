@@ -1,26 +1,16 @@
-var setupBotmaster = require('./botmaster');
+var setupBotmaster = require('./botmaster').setupBotmaster;
 var TelegramBot = require('botmaster').botTypes.TelegramBot;
 
 module.exports = function(RED) {
     function TelegramBotNode(config) {
         RED.nodes.createNode(this,config);
-        var node = this;
 
-        var botmaster = setupBotmaster(RED);
+        var setup = setupBotmaster(RED);
+        var botmaster = setup.botmaster;
         var telegramBot = new TelegramBot(config);
         botmaster.addBot(telegramBot);
 
-        this.on('input', function(msg) {
-            telegramBot.sendMessage(msg);
-        });
-
-        telegramBot.on('update', function(update) {
-            node.send({
-                update: update,
-                payload: update
-            });
-        });
-
+        setup.done(telegramBot);
     }
     RED.nodes.registerType('telegramBot', TelegramBotNode);
 };

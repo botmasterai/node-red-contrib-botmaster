@@ -350,25 +350,45 @@
      "module": "node-red",
      "file": "/Users/jonathanwickens/dev/node-red-contrib-botmaster/node_modules/node-red/nodes/core/storage/50-file.js"
     },
-    "botmaster-in": {
-     "name": "botmaster-in",
+    "action-end": {
+     "name": "action-end",
      "types": [
-      "botmaster in"
+      "action end"
      ],
      "enabled": true,
      "local": false,
      "module": "node-red",
-     "file": "/Users/jonathanwickens/dev/node-red-contrib-botmaster/dist/botmaster-in.js"
+     "file": "/Users/jonathanwickens/dev/node-red-contrib-botmaster/dist/action-end.js"
     },
-    "botmaster-out": {
-     "name": "botmaster-out",
+    "action-start": {
+     "name": "action-start",
      "types": [
-      "botmaster out"
+      "action start"
      ],
      "enabled": true,
      "local": false,
      "module": "node-red",
-     "file": "/Users/jonathanwickens/dev/node-red-contrib-botmaster/dist/botmaster-out.js"
+     "file": "/Users/jonathanwickens/dev/node-red-contrib-botmaster/dist/action-start.js"
+    },
+    "bot-response": {
+     "name": "bot-response",
+     "types": [
+      "bot response"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/Users/jonathanwickens/dev/node-red-contrib-botmaster/dist/bot-response.js"
+    },
+    "bot-update": {
+     "name": "bot-update",
+     "types": [
+      "bot update"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/Users/jonathanwickens/dev/node-red-contrib-botmaster/dist/bot-update.js"
     },
     "messengerBot": {
      "name": "messengerBot",
@@ -380,16 +400,6 @@
      "module": "node-red",
      "file": "/Users/jonathanwickens/dev/node-red-contrib-botmaster/dist/messengerBot.js"
     },
-    "telegramBot": {
-     "name": "telegramBot",
-     "types": [
-      "telegramBot"
-     ],
-     "enabled": true,
-     "local": false,
-     "module": "node-red",
-     "file": "/Users/jonathanwickens/dev/node-red-contrib-botmaster/dist/telegramBot.js"
-    },
     "slackBot": {
      "name": "slackBot",
      "types": [
@@ -400,6 +410,16 @@
      "module": "node-red",
      "file": "/Users/jonathanwickens/dev/node-red-contrib-botmaster/dist/slackBot.js"
     },
+    "telegramBot": {
+     "name": "telegramBot",
+     "types": [
+      "telegramBot"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/Users/jonathanwickens/dev/node-red-contrib-botmaster/dist/telegramBot.js"
+    },
     "twitterBot": {
      "name": "twitterBot",
      "types": [
@@ -409,6 +429,60 @@
      "local": false,
      "module": "node-red",
      "file": "/Users/jonathanwickens/dev/node-red-contrib-botmaster/dist/twitterBot.js"
+    }
+   }
+  },
+  "node-red-contrib-browser-utils": {
+   "name": "node-red-contrib-browser-utils",
+   "version": "0.0.4",
+   "local": true,
+   "nodes": {
+    "fileinject": {
+     "name": "fileinject",
+     "types": [
+      "fileinject"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-browser-utils",
+     "file": "/Users/jonathanwickens/dev/node-red-contrib-botmaster/node_modules/node-red-contrib-browser-utils/fileinject/fileinject.js"
+    },
+    "microphone": {
+     "name": "microphone",
+     "types": [
+      "microphone"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-browser-utils",
+     "file": "/Users/jonathanwickens/dev/node-red-contrib-botmaster/node_modules/node-red-contrib-browser-utils/microphone/microphone.js"
+    },
+    "camera": {
+     "name": "camera",
+     "types": [
+      "camera"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-browser-utils",
+     "file": "/Users/jonathanwickens/dev/node-red-contrib-botmaster/node_modules/node-red-contrib-browser-utils/camera/camera.js"
+    }
+   }
+  },
+  "node-red-contrib-play-audio": {
+   "name": "node-red-contrib-play-audio",
+   "version": "2.0.1",
+   "local": true,
+   "nodes": {
+    "play-audio": {
+     "name": "play-audio",
+     "types": [
+      "play audio"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-play-audio",
+     "file": "/Users/jonathanwickens/dev/node-red-contrib-botmaster/node_modules/node-red-contrib-play-audio/play-audio.js"
     }
    }
   },
@@ -482,7 +556,371 @@
      "file": "/Users/jonathanwickens/dev/node-red-contrib-botmaster/node_modules/node-red-node-twitter/27-twitter.js"
     }
    }
+  },
+  "node-red-node-watson": {
+   "name": "node-red-node-watson",
+   "version": "0.4.43",
+   "local": true,
+   "nodes": {
+    "watson-conversation-v1": {
+     "name": "watson-conversation-v1",
+     "types": [
+      "watson-conversation-v1"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-node-watson",
+     "file": "/Users/jonathanwickens/dev/node-red-contrib-botmaster/node_modules/node-red-node-watson/services/conversation/v1.js"
+    },
+    "watson-conversation-workspace-manager-v1": {
+     "name": "watson-conversation-workspace-manager-v1",
+     "types": [
+      "watson-conversation-v1-workspace-manager"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-node-watson",
+     "file": "/Users/jonathanwickens/dev/node-red-contrib-botmaster/node_modules/node-red-node-watson/services/conversation/v1-workspace-manager.js"
+    },
+    "watson-conversation-v1-experimental": {
+     "name": "watson-conversation-v1-experimental",
+     "types": [
+      "watson-conversation-v1-experimental"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-node-watson",
+     "file": "/Users/jonathanwickens/dev/node-red-contrib-botmaster/node_modules/node-red-node-watson/services/conversation/v1-exp.js"
+    },
+    "watson-discovery-v1": {
+     "name": "watson-discovery-v1",
+     "types": [
+      "watson-discovery-v1"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-node-watson",
+     "file": "/Users/jonathanwickens/dev/node-red-contrib-botmaster/node_modules/node-red-node-watson/services/discovery/v1.js"
+    },
+    "watson-discovery-v1-query-builder": {
+     "name": "watson-discovery-v1-query-builder",
+     "types": [
+      "watson-discovery-v1-query-builder"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-node-watson",
+     "file": "/Users/jonathanwickens/dev/node-red-contrib-botmaster/node_modules/node-red-node-watson/services/discovery/v1-query-builder.js"
+    },
+    "watson-discovery-v1-experimental": {
+     "name": "watson-discovery-v1-experimental",
+     "types": [
+      "watson-discovery"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-node-watson",
+     "file": "/Users/jonathanwickens/dev/node-red-contrib-botmaster/node_modules/node-red-node-watson/services/discovery/v1-exp.js"
+    },
+    "watson-document-conversion-v1": {
+     "name": "watson-document-conversion-v1",
+     "types": [
+      "convert"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-node-watson",
+     "file": "/Users/jonathanwickens/dev/node-red-contrib-botmaster/node_modules/node-red-node-watson/services/document_conversion/v1.js"
+    },
+    "watson-concept-insights-v2": {
+     "name": "watson-concept-insights-v2",
+     "types": [
+      "watson-concept-insights-corpus",
+      "watson-concept-insights-upload-document",
+      "watson-concept-insights-search",
+      "watson-concept-insights-search-concepts",
+      "watson-concept-insights-related-concepts"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-node-watson",
+     "file": "/Users/jonathanwickens/dev/node-red-contrib-botmaster/node_modules/node-red-node-watson/services/concept_insights/v2.js"
+    },
+    "alchemy-date-extraction": {
+     "name": "alchemy-date-extraction",
+     "types": [
+      "alchemy-date-extraction"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-node-watson",
+     "file": "/Users/jonathanwickens/dev/node-red-contrib-botmaster/node_modules/node-red-node-watson/services/alchemy_date_extraction/v1.js"
+    },
+    "watson-dialog-v1": {
+     "name": "watson-dialog-v1",
+     "types": [
+      "service-dialog"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-node-watson",
+     "file": "/Users/jonathanwickens/dev/node-red-contrib-botmaster/node_modules/node-red-node-watson/services/dialog/v1.js"
+    },
+    "alchemy_language-v1": {
+     "name": "alchemy_language-v1",
+     "types": [
+      "alchemy-feature-extract"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-node-watson",
+     "file": "/Users/jonathanwickens/dev/node-red-contrib-botmaster/node_modules/node-red-node-watson/services/alchemy_language/v1.js"
+    },
+    "watson-language-translator-v2": {
+     "name": "watson-language-translator-v2",
+     "types": [
+      "watson-translator"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-node-watson",
+     "file": "/Users/jonathanwickens/dev/node-red-contrib-botmaster/node_modules/node-red-node-watson/services/language_translator/v2.js"
+    },
+    "watson-language-translator-identify-v2": {
+     "name": "watson-language-translator-identify-v2",
+     "types": [
+      "watson-language-translator-identify"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-node-watson",
+     "file": "/Users/jonathanwickens/dev/node-red-contrib-botmaster/node_modules/node-red-node-watson/services/language_translator_identify/v2.js"
+    },
+    "watson-language-translator-util-v2": {
+     "name": "watson-language-translator-util-v2",
+     "types": [
+      "watson-translator-util"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-node-watson",
+     "file": "/Users/jonathanwickens/dev/node-red-contrib-botmaster/node_modules/node-red-node-watson/services/language_translator_util/v2.js"
+    },
+    "watson-language-identification-v1": {
+     "name": "watson-language-identification-v1",
+     "types": [
+      "watson-language-identification"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-node-watson",
+     "file": "/Users/jonathanwickens/dev/node-red-contrib-botmaster/node_modules/node-red-node-watson/services/language_identification/v1.js"
+    },
+    "watson-language-translate-v1": {
+     "name": "watson-language-translate-v1",
+     "types": [
+      "watson-translate"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-node-watson",
+     "file": "/Users/jonathanwickens/dev/node-red-contrib-botmaster/node_modules/node-red-node-watson/services/language_translation/v2.js"
+    },
+    "watson-language-translate-util-v1": {
+     "name": "watson-language-translate-util-v1",
+     "types": [
+      "watson-translator-util",
+      "watson-translate-util"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-node-watson",
+     "file": "/Users/jonathanwickens/dev/node-red-contrib-botmaster/node_modules/node-red-node-watson/services/language_translation_util/v2.js"
+    },
+    "watson-natural-language-classifier-v1": {
+     "name": "watson-natural-language-classifier-v1",
+     "types": [
+      "watson-natural-language-classifier"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-node-watson",
+     "file": "/Users/jonathanwickens/dev/node-red-contrib-botmaster/node_modules/node-red-node-watson/services/natural_language_classifier/v1.js"
+    },
+    "alchemy-news-v1": {
+     "name": "alchemy-news-v1",
+     "types": [
+      "news"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-node-watson",
+     "file": "/Users/jonathanwickens/dev/node-red-contrib-botmaster/node_modules/node-red-node-watson/services/alchemy_data_news/v1.js"
+    },
+    "watson-personality-insights-v1": {
+     "name": "watson-personality-insights-v1",
+     "types": [
+      "watson-personality-insights"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-node-watson",
+     "file": "/Users/jonathanwickens/dev/node-red-contrib-botmaster/node_modules/node-red-node-watson/services/personality_insights/v1.js"
+    },
+    "watson-personality-insights-v3": {
+     "name": "watson-personality-insights-v3",
+     "types": [
+      "watson-personality-insights-v3"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-node-watson",
+     "file": "/Users/jonathanwickens/dev/node-red-contrib-botmaster/node_modules/node-red-node-watson/services/personality_insights/v3.js"
+    },
+    "watson-relationship-extraction-v1": {
+     "name": "watson-relationship-extraction-v1",
+     "types": [
+      "watson-relationship-extraction"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-node-watson",
+     "file": "/Users/jonathanwickens/dev/node-red-contrib-botmaster/node_modules/node-red-node-watson/services/relationship_extraction/v1.js"
+    },
+    "watson-retrieve-and-rank-v1": {
+     "name": "watson-retrieve-and-rank-v1",
+     "types": [
+      "watson-retrieve-rank-credentials",
+      "watson-retrieve-rank-create-cluster",
+      "watson-retrieve-rank-cluster-settings",
+      "watson-retrieve-rank-upload-solr-configuration",
+      "watson-retrieve-rank-solr-configuration-settings",
+      "watson-retrieve-rank-solr-collection",
+      "watson-retrieve-rank-create-ranker",
+      "watson-retrieve-rank-ranker-settings",
+      "watson-retrieve-rank-search-and-rank"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-node-watson",
+     "file": "/Users/jonathanwickens/dev/node-red-contrib-botmaster/node_modules/node-red-node-watson/services/retrieve_and_rank/v1.js"
+    },
+    "watson-speech-to-text-v1": {
+     "name": "watson-speech-to-text-v1",
+     "types": [
+      "watson-speech-to-text"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-node-watson",
+     "file": "/Users/jonathanwickens/dev/node-red-contrib-botmaster/node_modules/node-red-node-watson/services/speech_to_text/v1.js"
+    },
+    "watson-speech-to-text-corpus-builder-v1": {
+     "name": "watson-speech-to-text-corpus-builder-v1",
+     "types": [
+      "watson-speech-to-text-v1-query-builder"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-node-watson",
+     "file": "/Users/jonathanwickens/dev/node-red-contrib-botmaster/node_modules/node-red-node-watson/services/speech_to_text/v1-corpus-builder.js"
+    },
+    "watson-text-to-speech-v1": {
+     "name": "watson-text-to-speech-v1",
+     "types": [
+      "watson-text-to-speech"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-node-watson",
+     "file": "/Users/jonathanwickens/dev/node-red-contrib-botmaster/node_modules/node-red-node-watson/services/text_to_speech/v1.js"
+    },
+    "watson-text-to-speech-corpus-builder-v1": {
+     "name": "watson-text-to-speech-corpus-builder-v1",
+     "types": [
+      "watson-text-to-speech-v1-query-builder"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-node-watson",
+     "file": "/Users/jonathanwickens/dev/node-red-contrib-botmaster/node_modules/node-red-node-watson/services/text_to_speech/v1-corpus-builder.js"
+    },
+    "watson-tone-analyzer-v3": {
+     "name": "watson-tone-analyzer-v3",
+     "types": [
+      "watson-tone-analyzer-v3"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-node-watson",
+     "file": "/Users/jonathanwickens/dev/node-red-contrib-botmaster/node_modules/node-red-node-watson/services/tone_analyzer/v3.js"
+    },
+    "watson-tradeoff-analytics-v1": {
+     "name": "watson-tradeoff-analytics-v1",
+     "types": [
+      "watson-tradeoff-analytics"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-node-watson",
+     "file": "/Users/jonathanwickens/dev/node-red-contrib-botmaster/node_modules/node-red-node-watson/services/tradeoff_analytics/v1.js"
+    },
+    "watson-tone-analyzer-v3-beta": {
+     "name": "watson-tone-analyzer-v3-beta",
+     "types": [
+      "watson-tone-analyzer"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-node-watson",
+     "file": "/Users/jonathanwickens/dev/node-red-contrib-botmaster/node_modules/node-red-node-watson/services/tone_analyzer/v3-beta.js"
+    },
+    "watson-visual-recognition-v1": {
+     "name": "watson-visual-recognition-v1",
+     "types": [
+      "watson-visual-recognition",
+      "watson-visual-util",
+      "watson-visual-training"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-node-watson",
+     "file": "/Users/jonathanwickens/dev/node-red-contrib-botmaster/node_modules/node-red-node-watson/services/visual_recognition/v1.js"
+    },
+    "watson-visual-recognition-v3": {
+     "name": "watson-visual-recognition-v3",
+     "types": [
+      "visual-recognition-v3",
+      "visual-recognition-util-v3"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-node-watson",
+     "file": "/Users/jonathanwickens/dev/node-red-contrib-botmaster/node_modules/node-red-node-watson/services/visual_recognition/v3.js"
+    },
+    "watson-similarity-search-v3": {
+     "name": "watson-similarity-search-v3",
+     "types": [
+      "similarity-search-v3",
+      "similarity-search-util-v3"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-node-watson",
+     "file": "/Users/jonathanwickens/dev/node-red-contrib-botmaster/node_modules/node-red-node-watson/services/similarity_search/v3.js"
+    },
+    "alchemy-vision-v1": {
+     "name": "alchemy-vision-v1",
+     "types": [
+      "alchemy-image-analysis"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-node-watson",
+     "file": "/Users/jonathanwickens/dev/node-red-contrib-botmaster/node_modules/node-red-node-watson/services/alchemy_vision/v1.js"
+    }
+   }
   }
  },
- "_credentialSecret": "1b4cbb0b32ea7c67a021ec4f10b8bc2a0f098cadc7468f3c7b5ddcbbc0e2000b"
+ "_credentialSecret": "f7e44944f86e5557b002162d1e887126a98e7f04a6d1acc5408bf84562c83f15"
 }

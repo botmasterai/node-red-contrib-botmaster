@@ -47,11 +47,15 @@ module.exports = function(RED) {
                     promise = msg.bot.sendCascadeTo(msg.payload, getRecipient(msg));
             }
 
-            promise.catch(function(error) {
+            promise
+            .then(function(){
+                node.send(msg);
+            })
+            .catch(function(error) {
                 node.error(error);
             });
         });
 
     }
-    RED.nodes.registerType('botmaster out', BotmasterOutNode);
+    RED.nodes.registerType('bot response', BotmasterOutNode);
 };

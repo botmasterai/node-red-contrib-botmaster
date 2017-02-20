@@ -1,20 +1,22 @@
 <script type="text/javascript">
-    RED.nodes.registerType('botmaster out',{
+    RED.nodes.registerType('bot response',{
         category: 'botmaster',
         color: '#a6bbcf',
         defaults: {
             name: {value:""},
             function: {value:"sendMessage"}
         },
+        align: 'middle',
         inputs:1,
+        outputs: 1,
         icon: "file.png",
         label: function()   {
-            return this.name||"botmaster out";
+            return this.function;
         }
     });
 </script>
 
-<script type="text/x-red" data-template-name="botmaster out">
+<script type="text/x-red" data-template-name="bot response">
     <div class="form-row">
         <label for="node-input-name"><i class="icon-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
@@ -36,8 +38,16 @@
     </div>
 </script>
 
-<script type="text/x-red" data-help-name="botmaster out">
+<script type="text/x-red" data-help-name="bot response">
     <p>Send message using one of the botmaster send message functions.</p>
     <p>Defaults to sendMessage but othe functions like reply are possible.</p>
-    <p>Read more about the available functions here: <a href="http://botmasterai.com/working-with-botmaster/botmaster-basics/">Botmaster basics</a></p>
+    <p>Read more about the available functions here: <a href="http://botmasterai.com/working-with-botmaster/botmaster-basics/">Botmaster basics</a>.</p>
+    <p>The main agument is provided via <code>msg.payload</code>.</p>
+    <p>On functions requiring recipientId, this is provided automatically though
+    <code>msg.update</code> (populated by a botmaster in node).</p>
+    <p>Reply also receives automatically update through <code>msg</code>.</p>
+    <p>
+    <b>Note: </b>This node does not send any response to the sender.
+    This should be done with a subsequent bot response node.
+ </p>
 </script>

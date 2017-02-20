@@ -9,8 +9,6 @@
             fbAppSecret: {value: ""},
             webhookEndpoint: {value: ""}
         },
-        inputs:1,
-        outputs: 1,
         icon: "file.png",
         label: function()   {
             return this.name||"Messenger Bot";
@@ -41,6 +39,12 @@
     </div>
 </script>
 
+
 <script type="text/x-red" data-help-name="messengerBot">
-    <p>A simple node that converts the message payloads outto all lower-case characters</p>
+    <p>
+        Setup a Facebook Messenger bot.
+    </p> <p>
+        Read the <a href="http://botmasterai.com/getting-started/messenger-setup/">offical docs</a>
+        to learn more about setting up credentails.
+    </p>
 </script>

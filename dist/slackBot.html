@@ -8,8 +8,6 @@
             clientSecret: {value:""},
             webhookEndpoint: {value: ""}
         },
-        inputs:1,
-        outputs: 1,
         icon: "file.png",
         label: function()   {
             return this.name||"Slack Bot";
@@ -37,5 +35,12 @@
 </script>
 
 <script type="text/x-red" data-help-name="slackBot">
-    <p>A simple node that converts the message payloads outto all lower-case characters</p>
+    <p>
+        Setup a slack bot.
+    </p> <p>
+        Use this node to provision creentials for a Slack bot.
+    </p> <p>
+        Read the <a href="http://botmasterai.com/getting-started/slack-setup/">mini-tutorial</a>
+        to learn more about setting up credentails.
+    </p>
 </script>

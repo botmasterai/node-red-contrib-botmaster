@@ -1,11 +1,11 @@
-var setupBotmaster = require('./botmaster');
+var setupBotmaster = require('./botmaster').setupBotmaster;
 
 module.exports = function(RED) {
     function BotmasterInNode(config) {
         RED.nodes.createNode(this,config);
         var node = this;
 
-        var botmaster = setupBotmaster(RED);
+        var botmaster = setupBotmaster(RED).botmaster;
 
         botmaster.on('update', function(bot, update) {
             node.send({
@@ -15,5 +15,5 @@ module.exports = function(RED) {
             });
         });
     }
-    RED.nodes.registerType('botmaster in', BotmasterInNode);
+    RED.nodes.registerType('bot update', BotmasterInNode);
 };

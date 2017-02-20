@@ -1,12 +1,11 @@
-var setupBotmaster = require('./botmaster');
+var setupBotmaster = require('./botmaster').setupBotmaster;
 var MessengerBot = require('botmaster').botTypes.MessengerBot;
 
 module.exports = function(RED) {
     function MessengerBotNode(config) {
         RED.nodes.createNode(this,config);
-        var node = this;
-
-        var botmaster = setupBotmaster(RED);
+        var setup = setupBotmaster(RED);
+        var botmaster = setup.botmaster;
         var messengerBot = new MessengerBot({
             credentials: {
                 verifyToken: config.verifyToken,
@@ -17,16 +16,8 @@ module.exports = function(RED) {
         });
         botmaster.addBot(messengerBot);
 
-        this.on('input', function(msg) {
-            messengerBot.sendMessage(msg);
-        });
+        setup.done(messengerBot);
 
-        messengerBot.on('update', function(update) {
-            node.send({
-                update: update,
-                payload: update
-            });
-        });
 
     }
     RED.nodes.registerType('messengerBot', MessengerBotNode);

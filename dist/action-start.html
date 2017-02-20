@@ -1,0 +1,42 @@
+<script type="text/javascript">
+    RED.nodes.registerType('action start',{
+        category: 'botmaster',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value:""},
+            tag: {value:""}
+        },
+        outputs: 1,
+        icon: "file.png",
+        label: function()   {
+            return this.name||"<"+this.tag+" />"||"action";
+        },
+        labelStyle: function() {
+            return this.tag?"node_label_italic":"";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="action start">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-tag"><i class="icon-tag"></i> Tag</label>
+        <input type="text" id="node-input-tag" placeholder="name of tag to match">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="action start">
+    <p>
+        Creates a new fulfill action.
+    </p> <p>
+        Actions allow you to define an XML-based api for integrating API calls
+        into a chat response.
+    </p> <p>
+        <b>Note: </b>
+        This node should be accompanied by an action end node in order for the
+        tag to be correctly processed.
+    </p>
+</script>

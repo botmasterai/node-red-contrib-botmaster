@@ -1,0 +1,31 @@
+<script type="text/javascript">
+    RED.nodes.registerType('action end',{
+        category: 'botmaster',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value:""}
+        },
+        inputs: 1,
+        align: 'right',
+        icon: "file.png",
+        label: function()   {
+            return this.name||"action end";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="action end">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="action end">
+    <p>
+        Resulves a fulfill tag.
+    </p> <p>
+        Uses <code>msg.payload</code> as the return value for the tag,
+        replacing the tag with the response.
+    </p>
+</script>
