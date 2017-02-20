@@ -34,8 +34,8 @@
         "type": "telegramBot",
         "z": "6b02241f.af3a2c",
         "name": "",
-        "authToken": "",
-        "webhookEndpoint": "",
+        "authToken": "379950108:AAGtEH599Ff94PGolcmHV0rfN2Cno5-rluA",
+        "webhookEndpoint": "/webhook1234",
         "x": 550,
         "y": 100,
         "wires": []
@@ -193,7 +193,9 @@
         "x": 170,
         "y": 400,
         "wires": [
-            []
+            [
+                "7f51c5b8.51456c"
+            ]
         ]
     },
     {
