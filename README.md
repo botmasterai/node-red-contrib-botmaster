@@ -4,7 +4,7 @@ Node-red nodes for [Botmaster](http://botmasterai.com/), the simple framework fo
 
 ## Sample flow
 
-![Sample flow image](images/sample flow.png?raw=true "Sample flow")
+![Sample flow image](https://raw.githubusercontent.com/botmasterai/node-red-contrib-botmaster/master/images/sample%20flow.png)
 
 
 ## Supported Bots
