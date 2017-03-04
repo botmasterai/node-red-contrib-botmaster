@@ -1,5 +1,4 @@
 var addAction = require('./botmaster').addAction;
-var Promise = require('bluebird');
 
 module.exports = function(RED) {
     function ActionStartNode(config) {
@@ -8,12 +7,10 @@ module.exports = function(RED) {
 
 
         var spec = {
-            controller: function(params) {
-                return new Promise(function(resolve) {
-                    node.send({
-                        params: params,
-                        done: resolve
-                    });
+            controller: function(params, next) {
+                node.send({
+                    params: params,
+                    next: next
                 });
             }
         };

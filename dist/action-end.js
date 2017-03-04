@@ -3,9 +3,12 @@ module.exports = function(RED) {
     function ActionStartNode(config) {
         RED.nodes.createNode(this,config);
 
-        this.on('input', function(msg) {
-            msg.done(msg.payload);
+        this.on('input', msg => {
+            msg.next(null, msg.payload).then( () => {
+                this.send(msg);
+            });
         });
+
 
 
     }

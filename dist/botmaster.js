@@ -16,7 +16,7 @@ function addAction(name, spec) {
 }
 
 function setupBotmaster(RED, node, bot) {
-    var done = function(bot) {
+    var done = function done(bot) {
         bot.use('outgoing', fulfill);
     };
 
@@ -29,7 +29,6 @@ function setupBotmaster(RED, node, bot) {
             }
         });
         node.on('close', function() {
-            //botmaster.server.close();
             botmaster = false;
         });
     }
@@ -42,31 +41,32 @@ function setupBotmaster(RED, node, bot) {
 function setupBotStatus(bot, node) {
     var updates = 0;
     var replies = 0;
-    var updateText = function() {
+    var updateText = function updateText() {
         return updates !== 1 ? updates + ' updates' : updates + ' update';
     };
-    var replyText= function() {
+    var replyText= function replyText() {
         return replies !== 1 ? replies + ' replies': replies + ' reply';
     };
-    var updateStatus = function() {
+    var updateStatus = function updateStatus() {
         node.status({fill: 'green', shape: 'dot',
             text: updateText() + '; ' + replyText()
         });
     };
     node.status({fill: 'grey', shape: 'ring', text: 'inactive'});
-    bot.on('update', function() {
+    bot.on('update', function updateCallback() {
         updates += 1;
         updateStatus();
     });
 
-    bot.on('error', function(error) {
+    bot.on('error', function errorCallback(error) {
         node.error(error);
         node.status({fill: 'red', shape: 'dot', text: 'error'});
     });
 
-    bot.use('outgoing', function() {
+    bot.use('outgoing', function outgoingCallback(bot, update, message, next) {
         replies += 1;
         updateStatus();
+        next();
     });
 }
 

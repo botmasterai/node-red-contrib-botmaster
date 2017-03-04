@@ -2,3 +2,5 @@ node_modules
 .flows.json.backup
 flows.json
 .config.json
+flows_cred.json
+slack_teams_info/

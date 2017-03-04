@@ -1,11 +1,11 @@
 var R = require('ramda');
 
 var defaultRecipientLens = R.lensPath(['update', 'sender', 'id']);
-var getRecipient = function(update) {
+var getRecipient = function(msg) {
     return R.compose(
-        R.when(R.isNil, R.always(R.view(defaultRecipientLens, update))),
+        R.when(R.isNil, R.always(R.view(defaultRecipientLens, msg))),
         R.prop('recipientId')
-    )(update);
+    )(msg);
 };
 
 module.exports = function(RED) {

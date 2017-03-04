@@ -6,6 +6,7 @@
             name: {value:""}
         },
         inputs: 1,
+        outputs: 1,
         align: 'right',
         icon: "parser-xml.png",
         label: function()   {
@@ -23,9 +24,11 @@
 
 <script type="text/x-red" data-help-name="action end">
     <p>
-        Resulves a fulfill tag.
+        Resolves a fulfill tag.
     </p> <p>
         Uses <code>msg.payload</code> as the return value for the tag,
         replacing the tag with the response.
+    </p> <p>
+        Once all tags have been resolved it will output the same <code>msg</code> that was input.
     </p>
 </script>
