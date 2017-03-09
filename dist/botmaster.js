@@ -21,17 +21,33 @@ function setupBotmaster(RED, node, bot) {
     };
 
     if (!botmaster) {
-        botmaster = new Botmaster({app: RED.httpNode});
+        botmaster = new Botmaster({
+            server: RED.server,
+            app: RED.httpNode
+        });
         botmaster.on('error', function(someBot, error) {
             if (bot === someBot) {
                 node.status({fill: 'red', shape: 'dot', text: 'bot error'});
                 node.error(error);
             }
         });
+    }
+
+    if (node && bot) {
+
         node.on('close', function() {
-            botmaster = false;
+            bot.removeAllListeners();
+            if (bot.app)
+                bot.app._router.stack.forEach(function(route,i,routes) {
+                    routes.splice(i,1);
+                });
+            if (botmaster) {
+                botmaster.server.removeAllListeners('request');
+                botmaster = false;
+            }
         });
     }
+
     return {botmaster: botmaster, done: done};
 }
 

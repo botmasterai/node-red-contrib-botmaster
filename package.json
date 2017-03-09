@@ -4,8 +4,8 @@
   "description": "botmaster for node-red",
   "dependencies": {
     "botmaster": "2.3.0",
-    "botmaster-fulfill": "3.1.2",
-    "botmaster-fulfill-actions": "1.0.0",
+    "botmaster-fulfill": "^3.2.0",
+    "botmaster-fulfill-actions": "^1.1.2",
     "botmaster-session-ware": "0.1.0",
     "ramda": "0.23.0"
   },

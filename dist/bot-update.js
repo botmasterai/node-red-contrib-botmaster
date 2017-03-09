@@ -5,7 +5,7 @@ module.exports = function(RED) {
         RED.nodes.createNode(this,config);
         var node = this;
 
-        var botmaster = setupBotmaster(RED).botmaster;
+        var botmaster = setupBotmaster(RED, node).botmaster;
 
         botmaster.on('update', function(bot, update) {
             node.send({
