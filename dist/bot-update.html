@@ -24,7 +24,12 @@
     <p>
         Sends botmaster updates from all configured bots.
     </p> <p>
+        This node generates a `msg` with `payload` and `update` set to the same object.
+        This object follows the Facebook Messenger [format](https://developers.facebook.com/docs/messenger-platform/webhook-reference#format)
+        You can use this object to get the ID of the sender and their message. By using a bot response node and updating message with your response payload you can reply to this user.
+    </p> <p>
         <b>Note: </b>This node does not send any response to the sender.
         This should be done with a subsequent bot response node.
+        Feel free to change the `payload`, however the `update` object should not be modified.
     </p>
 </script>
