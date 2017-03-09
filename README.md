@@ -39,6 +39,10 @@ The hi tag has a flow like the following.
 
 The first function node simply sets `msg.payload` to "hi there", and returns the msg. The action end node then uses this payload to replace `<hi />` in the message to the user with "hi there." The flow does not end there however, once this message containing hi has been sent the two nodes after the action end node retrieves a random giphy tagged with "Bot" from giphy.com and sends it to the user.
 
+This leads to an experience like the following:
+
+![sample experience gif](https://raw.githubusercontent.com/botmasterai/node-red-contrib-botmaster/master/images/sample%20experience.gif)
+
 Note that the pause tag splits the `<hi />` into its own message and waits 5 seconds before sending how are you. So if it takes longer than 5 seconds to get the giphy the "how are you" will come before the giphy.
 
 Read more about [fulfill](http://botmasterai.com/tutorials/using-fulfill/) and also read the docs of the [standard actions](https://github.com/botmasterai/botmaster-fulfill-actions) that are included.
