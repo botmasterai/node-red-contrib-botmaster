@@ -15,7 +15,7 @@ module.exports = function(RED) {
                     accessTokenSecret: config.accessTokenSecret
                 },
             });
-            var setup = setupBotmaster(RED, this, TwitterBot);
+            var setup = setupBotmaster(RED, this, twitterBot);
             var botmaster = setup.botmaster;
             botmaster.addBot(twitterBot);
             setupBotStatus(twitterBot, this, twitterBot);
