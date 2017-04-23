@@ -26,5 +26,5 @@ module.exports = function(RED) {
         }
 
     }
-    RED.nodes.registerType('twitterBot', TwitterBotNode);
+    RED.nodes.registerType('twitter-bot', TwitterBotNode);
 };

@@ -23,5 +23,5 @@ module.exports = function(RED) {
             this.error(err);
         }
     }
-    RED.nodes.registerType('telegramBot', TelegramBotNode);
+    RED.nodes.registerType('telegram-bot', TelegramBotNode);
 };

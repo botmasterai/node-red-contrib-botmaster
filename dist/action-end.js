@@ -12,5 +12,5 @@ module.exports = function(RED) {
 
 
     }
-    RED.nodes.registerType('action end', ActionStartNode);
+    RED.nodes.registerType('action-end', ActionStartNode);
 };

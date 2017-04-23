@@ -15,5 +15,5 @@ module.exports = function(RED) {
             });
         });
     }
-    RED.nodes.registerType('bot update', BotmasterInNode);
+    RED.nodes.registerType('bot-update', BotmasterInNode);
 };

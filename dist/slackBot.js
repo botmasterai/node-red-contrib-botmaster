@@ -26,5 +26,5 @@ module.exports = function(RED) {
         }
 
     }
-    RED.nodes.registerType('slackBot', SlackBotNode);
+    RED.nodes.registerType('slack-bot', SlackBotNode);
 };

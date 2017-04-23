@@ -14,7 +14,6 @@ module.exports = function(RED) {
                 },
                 webhookEndpoint: config.webhookEndpoint
             });
-            console.log('setup messenger')
             var setup = setupBotmaster(RED, this, messengerBot);
             var botmaster = setup.botmaster;
             botmaster.addBot(messengerBot);
@@ -26,5 +25,5 @@ module.exports = function(RED) {
         }
 
     }
-    RED.nodes.registerType('messengerBot', MessengerBotNode);
+    RED.nodes.registerType('messenger-bot', MessengerBotNode);
 };

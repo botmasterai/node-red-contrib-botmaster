@@ -57,5 +57,5 @@ module.exports = function(RED) {
         });
 
     }
-    RED.nodes.registerType('bot response', BotmasterOutNode);
+    RED.nodes.registerType('bot-response', BotmasterOutNode);
 };
