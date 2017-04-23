@@ -32,14 +32,14 @@
   "license": "MIT",
   "node-red": {
     "nodes": {
-      "action start": "dist/action-start.js",
-      "action end": "dist/action-end.js",
-      "bot update": "dist/bot-update.js",
-      "bot response": "dist/bot-response.js",
-      "messengerBot": "dist/messengerBot.js",
-      "telegramBot": "dist/telegramBot.js",
-      "slackBot": "dist/slackBot.js",
-      "twitterBot": "dist/twitterBot.js"
+      "action-start": "dist/action-start.js",
+      "action-end": "dist/action-end.js",
+      "bot-update": "dist/bot-update.js",
+      "bot-response": "dist/bot-response.js",
+      "messenger-bot": "dist/messengerBot.js",
+      "telegram-bot": "dist/telegramBot.js",
+      "slack-bot": "dist/slackBot.js",
+      "twitter-bot": "dist/twitterBot.js"
     }
   },
   "bugs": {
