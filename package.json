@@ -36,10 +36,10 @@
       "action-end": "dist/action-end.js",
       "bot-update": "dist/bot-update.js",
       "bot-response": "dist/bot-response.js",
-      "messenger-bot": "dist/messengerBot.js",
-      "telegram-bot": "dist/telegramBot.js",
-      "slack-bot": "dist/slackBot.js",
-      "twitter-bot": "dist/twitterBot.js"
+      "messenger-bot": "dist/messenger-bot.js",
+      "telegram-bot": "dist/telegram-bot.js",
+      "slack-bot": "dist/slack-bot.js",
+      "twitter-bot": "dist/twitter-bot.js"
     }
   },
   "bugs": {
